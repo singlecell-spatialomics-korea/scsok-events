@@ -1,0 +1,13 @@
+Dear Participant,
+
+Thank you for registering. We're delighted that you'll be joining our community of researchers, practitioners, and thought leaders.
+
+To complete your registration process, please confirm your attendance by clicking the link below:
+{{ activate_url }}
+
+If you have any questions or require assistance, please don't hesitate to contact our support team.
+
+We look forward to your participation and valuable contributions to the discussions.
+
+Warm regards,
+{{ site_name }}

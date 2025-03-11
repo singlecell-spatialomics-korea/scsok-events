@@ -1,0 +1,48 @@
+# SvelteKit build artifacts
+.svelte-kit/
+build/
+
+# Node.js dependencies
+node_modules/
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# SvelteKit lock files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# SvelteKit output
+public/build/
+
+# Django specific
+*.log
+*.pot
+*.pyc
+__pycache__/
+db.sqlite3
+media/
+staticfiles/
+backend/static/
+.env
+
+# Python
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+var/
+*.manifest
+*.spec
+pip-log.txt
+pip-delete-this-directory.txt
+__pypackages__/

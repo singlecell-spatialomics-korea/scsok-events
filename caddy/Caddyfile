@@ -1,0 +1,29 @@
+(logging) {
+    log stdoutlogger {
+        output stdout
+    }
+    log filelogger {
+        output file /var/log/caddy/access.log {
+            roll_size 10mb
+            roll_keep 10
+            roll_keep_for 72h
+        }
+    }
+}
+
+:80 {
+    import logging
+    reverse_proxy /* frontend:3000
+    reverse_proxy /{$DJANGO_ADMIN_PAGE_NAME:djangoadmin}/* backend:8080
+    reverse_proxy /accounts/orcid/* backend:8080
+    reverse_proxy /_allauth/browser/v1/auth/provider/redirect backend:8080
+    reverse_proxy /_allauth/browser/v1/account/providers backend:8080
+    handle_path /static/* {
+        root * /www/static
+        file_server
+    }
+    handle_path /media/* {
+        root * /www/media
+        file_server
+    }
+}
