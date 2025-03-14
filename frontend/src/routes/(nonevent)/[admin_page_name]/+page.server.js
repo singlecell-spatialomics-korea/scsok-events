@@ -35,7 +35,7 @@ export const actions = {
         if (response.ok && response.status === 200) {
             return response.data;
         } else {
-            throw error(response.status, { message: 'Server error. It this persists, please contact the admininistrator.' });
+            throw error(response.status, response.data);
         }
     },
     'delete_event': async ({ cookies, request }) => {
@@ -45,7 +45,7 @@ export const actions = {
         if (response.ok && response.status === 200) {
             return response.data;
         } else {
-            throw error(response.status, { message: 'Server error. It this persists, please contact the admininistrator.' });
+            throw error(response.status, response.data);
         }
     }
 };
