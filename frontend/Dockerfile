@@ -7,7 +7,6 @@ RUN corepack enable
 WORKDIR /app
 
 COPY package.json /app/
-COPY pnpm-lock.yaml /app/
 RUN pnpm install
 
 COPY . /app/
