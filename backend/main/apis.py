@@ -97,6 +97,12 @@ def get_events(request):
 @api.post("/admin/event/add", response=MessageSchema)
 def add_event(request):
     data = json.loads(request.body)
+    if not data["name"] or not data["link_info"] or not data["organizers"] or not data["venue"] or not data["start_date"] or not data["end_date"] or not data["capacity"]:
+        return api.create_response(
+            request,
+            {"code": "missing_fields", "message": "Please fill all required fields."},
+            status=400,
+        )
     email_template_registration = EmailTemplate.objects.create(
         subject=settings.ACCOUNT_EMAIL_SUBJECT_PREFIX+"Registration Confirmation for {{ event.name }}",
         body="Dear {{ attendee.first_name }},\n\n"
@@ -151,7 +157,7 @@ def get_event(request, event_id: int):
     except Event.DoesNotExist:
         return api.create_response(
             request,
-            {},
+            {"code": "not_found", "message": "Event not found."},
             status=404,
         )
     return event
@@ -194,7 +200,14 @@ def update_event(request, event_id: int):
 @ensure_staff
 @api.post("/admin/event/{event_id}/delete", response=MessageSchema)
 def delete_event(request, event_id: int):
-    Event.objects.get(id=event_id).delete()
+    try:
+        Event.objects.get(id=event_id).delete()
+    except Event.DoesNotExist:
+        return api.create_response(
+            request,
+            {"code": "not_found", "message": "Event not found."},
+            status=404,
+        )
     return {"code": "success", "message": "Event deleted."}
 
 @ensure_event_staff

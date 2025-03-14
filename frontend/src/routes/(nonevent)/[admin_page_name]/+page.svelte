@@ -83,6 +83,11 @@
                 </TableBodyCell>
             </TableBodyRow>
         {/each}
+        {#if filtered_events.length === 0}
+            <TableBodyRow>
+                <TableBodyCell colspan="4" class="text-center">No events found.</TableBodyCell>
+            </TableBodyRow>
+        {/if}
     </TableBody>
 </TableSearch>
 
