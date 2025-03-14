@@ -77,7 +77,10 @@
 {/snippet}
 
 <Heading tag="h1" customSize="text-2xl font-bold" class="mb-3">Event Registration</Heading>
-<p class="mb-10 font-light">Please fill the following form to register for the event.</p>
+<p class="mb-10 font-light">
+    Please fill the following form to register for the event. Your information was automatically filled based on your account information.<br><br>
+    Once this form is submitted, you <b>cannot</b> change the information you provided to the event. If you need to update your information, please contact the event organizers.
+</p>
 <form use:felteForm method="post" class="space-y-5">
     <RegistrationForm data={$formData} errors={$errors} config={form_config} />
     {#if data.questions.length > 0}
