@@ -567,7 +567,14 @@ def get_user_abstract(request, event_id: int):
     user = request.user
     event = Event.objects.get(id=event_id)
     attendee = Attendee.objects.get(user=user, event=event)
-    abstract = attendee.abstracts.get(event_id=event_id)
+    try:
+        abstract = attendee.abstracts.get(event_id=event_id)
+    except Abstract.DoesNotExist:
+        return api.create_response(
+            request,
+            {"code": "not_found", "message": "Abstract not found."},
+            status=404,
+        )
     return abstract
 
 @api.get("/event/{event_id}/abstract/{abstract_id}", response=AbstractSchema)
