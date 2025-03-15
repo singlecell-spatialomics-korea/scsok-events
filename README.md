@@ -46,27 +46,26 @@ Static Website                IEUM
 
 ## Installation
 
+1. Clone repository.
 ```bash
 # Clone repository
 git clone https://github.com/ieum-org/ieum.git
 cd ieum
-
+```
+1. Create a .env file. Define all variables in `compose.yml` or `compose-release.yml`.
+2. Run IEUM via Docker Compose
+```bash
 # Using Docker compose
 docker compose up -d # Debug
 # or
-docker compose up -f compose-release.yml -d # Release
-
-# Or manual setup
-pip install -r requirements.txt
-python manage.py migrate
-python manage.py createsuperuser
-python manage.py runserver
+docker compose -f compose-release.yml up -d # Release
 ```
-
-## Quick Start
-
-1. Create a .env file. Define all variables in `compose.yml` or `compose-release.yml`.
-2. Create superuser.
+3. Create superuser.
+```bash
+docker compose exec backend python manage.py createsuperuser
+# or
+docker compose -f compose-release.yml exec backend python manage.py createsuperuser
+```
 3. Login via Django Admin at http://127.0.0.1:9080/[DJANGO_ADMIN_PAGE_NAME]
 4. Access admin page at http://127.0.0.1:9080/[ADMIN_PAGE_NAME]
 5. Create a conference
