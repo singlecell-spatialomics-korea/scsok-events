@@ -55,25 +55,24 @@ def get_user(request):
 
 @api.post("/me", response=UserSchema)
 def update_user(request):
-    # get the data from the request
-    data = UserSchema(**json.loads(request.body))
+    data = json.loads(request.body)
     # check if mandatory fields are filled
-    if not data.first_name or not data.last_name or not data.nationality or not data.institute:
+    if not data["first_name"] or not data["last_name"] or not data["nationality"] or not data["institute"]:
         return api.create_response(
             request,
             {"errors": [{"message": "Required fields are not filled", "code": "invalid"}]},
             status=400,
         )
     user = request.user
-    user.first_name = data.first_name
-    user.last_name = data.last_name
-    user.middle_initial = data.middle_initial
-    user.nationality = data.nationality
-    user.job_title = data.job_title
-    user.department = data.department
-    user.institute = data.institute
-    user.disability = data.disability
-    user.dietary = data.dietary
+    user.first_name = data["first_name"]
+    user.last_name = data["last_name"]
+    user.middle_initial = data["middle_initial"]
+    user.nationality = data["nationality"]
+    user.job_title = data["job_title"]
+    user.department = data["department"]
+    user.institute = data["institute"]
+    user.disability = data["disability"]
+    user.dietary = data["dietary"]
     user.save()
     return user
 
