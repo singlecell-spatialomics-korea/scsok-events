@@ -334,7 +334,7 @@ def register_event(request, event_id: int):
             status=400,
         )
 
-    if event.attendees.filter(id=user.id).exists():
+    if event.attendees.filter(user=user).exists():
         return api.create_response(
             request,
             {"code": "already_registered", "message": "You are already registered."},
