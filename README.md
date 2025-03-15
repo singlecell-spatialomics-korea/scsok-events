@@ -4,7 +4,30 @@
 
 ## Overview
 
-IEUM is an open-source platform for organizing scientific conferences. It handles abstract submissions, registrations, and provides customizable workflows for event organizers.
+IEUM is an open-source platform for organizing scientific conferences. It manages abstract submissions, event registrations, and offers customizable workflows for event organizers.
+
+In contrast to other systems, IEUM is designed to integrate seamlessly with existing static websites. For example:
+
+```
+Static Website                IEUM
++-----------------+         +------------------------------+
+|                 |         |                              |
+| Event 1 Detail  | <-----> | Registration Page for Event 1|----+
+|                 |         |                              |    |
++-----------------+         +------------------------------+    |
+                                                                |
++-----------------+         +------------------------------+    |    +-------------------+
+|                 |         |                              |    |    |                   |
+| Event 2 Detail  | <-----> | Registration Page for Event 2|----+--->| IEUM User & Event |
+|                 |         |                              |    |    | Registration      |
++-----------------+         +------------------------------+    |    |                   |
+                                                                |    +-------------------+
++-----------------+         +------------------------------+    |
+|                 |         |                              |    |
+| Event 3 Detail  | <-----> | Registration Page for Event 3|----+
+|                 |         |                              |
++-----------------+         +------------------------------+
+```
 
 ## Features
 
