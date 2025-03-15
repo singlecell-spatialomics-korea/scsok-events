@@ -610,9 +610,12 @@ def delete_abstract(request, event_id: int, abstract_id: int):
 def is_reviewer(request, event_id: int):
     event = Event.objects.get(id=event_id)
     if not event.accepts_abstract:
-        return False
+        return False # Event does not accept abstracts
     user = request.user
-    attendee = Attendee.objects.get(user=user, event_id=event_id)
+    try:
+        attendee = Attendee.objects.get(user=user, event_id=event_id)
+    except Attendee.DoesNotExist:
+        return False # User is not registered to the event
     return attendee in Event.objects.get(id=event_id).reviewers.all()
 
 @api.get("/event/{event_id}/reviewer/vote", response=AbstractVoteSchema)
