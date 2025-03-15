@@ -12,4 +12,4 @@ your account:
 {{ password_reset_url }}
 
 Warm regards,
-{{ site_name }}
+{{ current_site.name }}

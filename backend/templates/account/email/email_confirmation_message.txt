@@ -10,4 +10,4 @@ If you have any questions or require assistance, please don't hesitate to contac
 We look forward to your participation and valuable contributions to the discussions.
 
 Warm regards,
-{{ site_name }}
+{{ current_site.name }}
