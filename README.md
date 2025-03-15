@@ -44,7 +44,7 @@ Static Website                IEUM
 - **Database**: PostgreSQL
 - **Containerization**: Docker
 
-## Installation
+## Quick Start
 
 1. Clone repository.
 ```bash
