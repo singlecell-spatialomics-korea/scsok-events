@@ -1,6 +1,6 @@
 <script>
     import { enhance } from '$app/forms';
-    import { goto, invalidateAll } from '$app/navigation';
+    import { goto } from '$app/navigation';
     
     import { A, Card, Button, Heading, Indicator, Label, Input, Checkbox, Select, Alert, Navbar, Textarea } from 'flowbite-svelte';
     import { onMount } from 'svelte';
