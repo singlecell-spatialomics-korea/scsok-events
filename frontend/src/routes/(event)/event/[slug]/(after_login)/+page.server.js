@@ -1,4 +1,3 @@
-import { invalidateAll } from '$app/navigation';
 import { get, post } from '$lib/fetch';
 import { error, fail, redirect } from '@sveltejs/kit';
 

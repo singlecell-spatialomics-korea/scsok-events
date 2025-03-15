@@ -212,7 +212,6 @@
         return async ({ result, action, update }) => {
             if (result.type === 'success') {
                 await update({ reset: false });
-                invalidateAll();
             }
             remove_attendee_modal = false;
         };

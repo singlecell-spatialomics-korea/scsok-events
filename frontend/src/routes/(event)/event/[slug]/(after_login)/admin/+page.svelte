@@ -6,7 +6,6 @@
     import { NewspaperSolid, EnvelopeSolid, ClipboardListSolid, MicrophoneSolid, UsersGroupSolid, EditSolid, ProfileCardSolid } from 'flowbite-svelte-icons';
     import { onMount } from 'svelte';
 	import { enhance } from '$app/forms';
-	import { invalidateAll } from '$app/navigation';
 
     import RegistrationForm from '$lib/components/RegistrationForm.svelte';
     import EventAdminForm from '$lib/components/EventAdminForm.svelte';
