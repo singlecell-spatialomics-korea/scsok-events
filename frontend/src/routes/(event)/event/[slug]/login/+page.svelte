@@ -58,12 +58,12 @@
 
 <Card size="none" padding="none" class="grid md:grid-cols-2">
     <div class="p-8 flex flex-col space-y-8 border-l border-b">
-        <h3 class="text-xl font-medium text-gray-900 dark:text-white">Create a KOBRA registration account</h3>
+        <h3 class="text-xl font-medium text-gray-900 dark:text-white">Create a SCSOK event registration account</h3>
         <p class="text-sm !mt-2">New with us? Create an account to proceed.</p>
         <Button class="w-full" href="/registration?next=/event/{event.id}">Create an account</Button>
     </div>
     <div class="border-l border-b p-8">
-        <h3 class="text-xl font-medium text-gray-900 dark:text-white">Sign in using KOBRA registration account</h3>
+        <h3 class="text-xl font-medium text-gray-900 dark:text-white">Sign in using SCSOK event registration account</h3>
         <p class="text-sm !mt-2">Please log in to register for the event.</p>
         <form method="POST" action="?/login" use:enhance={handleLogin} class="space-y-4 mt-6">
             <div>

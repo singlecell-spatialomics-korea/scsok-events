@@ -9,6 +9,6 @@
     {#if $page.status === 404}
         <p class="mt-4">The page you are looking for does not exist.</p>
     {:else if $page.status === 500}
-        <p class="mt-4">If this problem persists, please contact <A href="mailto:admin@kobra.kr">the administrator</A>.</p>
+        <p class="mt-4">If this problem persists, please contact <A href="mailto:scsok.events@gmail.com">the administrator</A>.</p>
     {/if}
 </div>

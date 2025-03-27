@@ -7,7 +7,7 @@
 
 <div class="relative flex justify-center items-center overflow-hidden h-[300px] sm:h-[400px] md:h-[340px]">
     <div class="absolute flex w-full h-full bg-darken">
-        <img alt="..." src="/kobra-bg.png" class="absolute block !w-full h-full object-cover z-0">
+        <img alt="..." src="/bg-default.webp" class="absolute block !w-full h-full object-cover z-0">
     </div>
     <div class="relative container px-7">
         <a href={event.link_info}>
